@@ -1,40 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.IO.Enumeration;
 using UnityEngine;
-using UnityEngine.Rendering;
 
-[CreateAssetMenu(fileName = "Question", menuName = "New Question")]
+[CreateAssetMenu(fileName = "Question", menuName = "ScriptableObjects/New Question")]
 
 public class QuestionSO : ScriptableObject
 {
     [TextArea(2, 5)]
     [SerializeField] private string question;
 
-    [SerializeField] private string[] Questions = {"ola", "adeus", "bom dia", "bora comprar pokemno booster para comprar no ebay"};
+    [SerializeField] private string[] repostas;
 
-    [SerializeField] private int resposta1;
+    [SerializeField] private int respostasCorretas;
 
     public string GetQuestion()
     {
         return question;
     }
-    public string GetCorrectAnswerIndex()
+
+    public int GetCorrectAnswer()
     {
-        return Questions[resposta1];
-    }
-    public string GetAnswer()
-    {
-        return Questions[resposta1];
+        return respostasCorretas;
     }
 
-
-
-
-
-
-
-
-
-
+    public string GetAnswer(int index)
+    {
+        if (index >= 0 && index < repostas.Length)
+        {
+            return repostas[index];
+        }
+        return "";
+    }
 }
