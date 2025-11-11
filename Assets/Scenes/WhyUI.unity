@@ -1380,6 +1380,7 @@ MonoBehaviour:
   isAnsweringQuestion: 0
   loadNextQuestion: 0
   fillFraction: 0
+  onclick: {fileID: 0}
 --- !u!1 &1580241451
 GameObject:
   m_ObjectHideFlags: 0
